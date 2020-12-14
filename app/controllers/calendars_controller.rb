@@ -8,7 +8,7 @@ class CalendarsController < ApplicationController
 
   # 予定の保存
   def create
-    plan = Plan.create(plan_params)
+    Plan.create(plan_params)
     redirect_to action: :index
   end
 
@@ -36,7 +36,7 @@ class CalendarsController < ApplicationController
       end
 
       wday_num = Date.today.wday + x
-      if wday_num <= 7
+      if wday_num >= 7
         wday_num = wday_num -7
       end
       
